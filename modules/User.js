@@ -1,8 +1,8 @@
-const mongoose = require("mognoose");
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const userScema = new Schame({
+const userSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -16,12 +16,11 @@ const userScema = new Schame({
     required: true
   },
   avatar: {
-    type: String,
-    required: true
+    type: String
   },
   date: {
     type: Date,
     default: Date.now
   }
 });
-module.exports = User = mongoose.module("users", userScema);
+module.exports = User = mongoose.model("users", userSchema);
