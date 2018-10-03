@@ -8,6 +8,7 @@ const validateProfileInput = require("../../validation/profile");
 
 // Load profile model
 const Profile = require("../../models/Profile");
+
 // Load user model
 const User = require("../../models/User");
 
@@ -25,6 +26,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({ user: req.user.id })
+      .populate("user", ["name", "avatar"])
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
