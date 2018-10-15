@@ -26,7 +26,7 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <p className="lead text-muted">Welcome {user.name}</p>
-            <p>You have not set up your profile yet!</p>
+            <p className="h6">You have not set up your profile yet!</p>
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create one now!
             </Link>
