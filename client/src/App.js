@@ -30,7 +30,8 @@ import Profile from "./components/profile/Profile";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
-//import css
+//import other
+import NotFound from "./components/not-found/NotFound";
 import "./App.css";
 
 //Check for token
@@ -98,6 +99,7 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </div>
