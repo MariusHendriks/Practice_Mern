@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { getCurrentProfile, deleteProfile } from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
 import ProfileActions from "./ProfileActions";
+import Experience from "./Experience";
+import Education from "./Education";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -31,7 +33,8 @@ class Dashboard extends Component {
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
-
+            <Experience experience={profile.experience} />
+            <Education education={profile.education} />
             <div style={{ marginBottom: "60px" }}>
               <button
                 onClick={this.onDeleteCick.bind(this)}
@@ -56,14 +59,12 @@ class Dashboard extends Component {
       }
     }
     return (
-      <div className="dashboard">
+      <div className="dashboard mt-4">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="display-4">
-                <h1>Dashboard</h1>
-                {dashboardContent}
-              </div>
+              <h1 className="display-4">Dashboard</h1>
+              {dashboardContent}
             </div>
           </div>
         </div>
