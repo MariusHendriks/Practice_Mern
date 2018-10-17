@@ -28,6 +28,7 @@ import Profile from "./components/profile/Profile";
 
 //import post stuff
 import Posts from "./components/posts/Posts";
+import Post from "./components/post/Post";
 //import auth
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -100,6 +101,9 @@ class App extends Component {
                   path="/add-education"
                   component={AddEducation}
                 />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/feed" component={Posts} />
