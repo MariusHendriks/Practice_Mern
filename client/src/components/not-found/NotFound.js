@@ -5,7 +5,7 @@ export default class NotFound extends Component {
     return (
       <div>
         <h1 className="display-4">Page not found</h1>
-        <p>Oops! You clicked the something that doenst exist!</p>
+        <p>This doesnt exist (yet)!</p>
       </div>
     );
   }
